@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3rd party
-    'rest_framework', # new
+    'rest_framework',
+    'corsheaders', # new
 
     # Local
     'todos',
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # new
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -126,10 +128,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# new
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ]
 }
+
+# new
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://localhost:8000',
+]
