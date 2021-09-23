@@ -9,7 +9,7 @@ class PostSerializer(serializers.ModelSerializer):
         fields = ('id', 'author', 'title', 'body', 'created_at',)
         model = Post
 
-class UserSerializer(serializers.ModelSerilizer): # new
+class UserSerializer(serializers.ModelSerializer): # new
 
     class Meta:
         model = get_user_model()
