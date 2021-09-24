@@ -5,7 +5,7 @@ from .permissions import IsAuthorOrReadOnly
 from .serializers import PostSerializer, UserSerializer # new
 
 
-class PostViewSet(viewsets.ModelViewSet): # news
+class PostViewSet(viewsets.ModelViewSet): # new
     permission_classes = (IsAuthorOrReadOnly,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
